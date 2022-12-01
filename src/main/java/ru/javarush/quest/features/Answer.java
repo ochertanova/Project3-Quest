@@ -6,8 +6,8 @@ import lombok.Getter;
 @Builder
 @Getter
 public class Answer {
-    private long id;
+    private int id;
     private String text;
     private boolean right;
-    private int weight = 0;
+    private int weight;
 }
