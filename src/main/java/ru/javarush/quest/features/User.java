@@ -10,8 +10,9 @@ import lombok.Setter;
 public class User {
     private String name;
     private int point;
-    private Integer currentQuestionId;
-    private Integer bestResult;
+    private int currentQuestionId;
+    private int bestResult;
+
 
     @Override
     public String toString() {
