@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %-5p %C: %m%n"/>
+        </Console>
+        <RollingFile name="QUEST" fileName="C:/Users/username/IdeaProjects/Project3-Quest/logs/quest.log"
+                     filePattern="C:/Users/username/IdeaProjects/Project3-Quest/logs/quest.%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} {%t} %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <CronTriggeringPolicy schedule="0 0 * * * ?"/>
+                <SizeBasedTriggeringPolicy/>
+            </Policies>
+            <DefaultRolloverStrategy>
+                <Delete basePath="C:/Users/username/IdeaProjects/Project3-Quest/logs">
+                    <IfFileName glob="*/guest.*.log"/>
+                    <IfLastModified age="3d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="ALL">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="QUEST"/>
+        </Root>
+    </Loggers>
+</Configuration>
